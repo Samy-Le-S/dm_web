@@ -1,0 +1,85 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+:root {
+    --teinte-neutre: 200;
+    --teinte-erreur: 0;
+    --teinte-correcte: 145;
+}
+
+body {
+    --teinte: var(--teinte-neutre);
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(var(--teinte), 100%, 20%);
+}
+
+body.correct {
+    --teinte: var(--teinte-correcte);
+}
+
+body.erreur {
+    --teinte: var(--teinte-erreur);
+}
+
+.conteneur {
+    width: 800px;
+    max-width: 80%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px;
+}
+
+.grille-boutons {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.bouton {
+    font-size: large;
+    --teinte: var(--teinte-neutre);
+    border: 3px solid hsl(var(--teinte), 100%, 30%);
+    background-color: hsl(var(--teinte), 100%, 50%);
+    border-radius: 50px;
+    padding: 5px 10px;
+    color: white;
+    outline: none;
+}
+
+.bouton:hover {
+    border-color: darkblue;
+}
+
+.bouton.correct {
+    --teinte: var(--teinte-correcte);
+    color: black;
+}
+
+.bouton.erreur {
+    --teinte: var(--teinte-erreur);
+}
+
+.btn-demarrer, .btn-suivant {
+    font-weight: bold;
+    padding: 15px 25px;
+}
+
+.controles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cacher {
+    display: none;
+}
